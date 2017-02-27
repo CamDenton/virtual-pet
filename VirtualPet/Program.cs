@@ -8,13 +8,15 @@ namespace VirtualPet
 {
     class Program
     {
-
+        // Declare string for the name of the users pet to be used later
         static string userPetName = String.Empty;
+        // Declare a boolean to break the loop for the introduction
         static bool introDone = false;
 
 
         static void Main(string[] args)
         {
+            // Creates a loop to first run the intro, then breaks the loop once it is over
             do
             {
 
@@ -23,6 +25,7 @@ namespace VirtualPet
                 Console.WriteLine("Virtual Spouse: You brought home a... pet? A Camogatchi? Is that something Japanese?");
                 Console.WriteLine("Virtual Spouse: Whatever, I'm not taking care of it. What will you name it, anyways?");
 
+                // Assigns the user input to the userPetName string
                 userPetName = Console.ReadLine();
 
                 Console.WriteLine("Virtual Spouse: Well... just take care of your " + userPetName + ".");
@@ -32,38 +35,48 @@ namespace VirtualPet
 
             } while (introDone == false);
 
+            // creates a new instance of the class UserPet using only the name modifier
             UserPet yourPet = new UserPet(userPetName);
+            // Declares an array of strings for the menu options
             string[] options = new string[] { "1. Feed", "2. Send Outside", "3. Play Together", "4. Do Nothing"};
             
+            // creates an infinite loop that introduces menu options and runs them
             for (int i = 1; i < (i + 2); i++ )
             {
+                // Caps the hunger of the pet to 100
                 if (yourPet.Hunger > 100)
                 {
                     yourPet.Hunger = 100;
                 }
 
-                if (yourPet.Waste > 100)
+                // Caps the waste of the pet to 0
+                if (yourPet.Waste < 0)
                 {
-                    yourPet.Waste = 100;
+                    yourPet.Waste = 0;
                 }
 
+                // Caps the play of the pet to 100
                 if (yourPet.Play > 100)
                 {
                     yourPet.Play = 100;
                 }
 
+                // Menu options are stated 
                 Console.WriteLine("What will you do? Choose a number:");
                 Console.WriteLine("Hunger = " + yourPet.Hunger);
                 Console.WriteLine("waste = " + yourPet.Waste);
                 Console.WriteLine("Boredom = " + yourPet.Play);
 
-                foreach(string option in options)
+                // Writes to the console each element of the array options
+                foreach (string option in options)
                 {
                     Console.WriteLine(option);
                 }
 
+                // Collects the users input
                 int userChoice = int.Parse(Console.ReadLine());
-                
+
+                // Creates a switch of conditions that run depending on the users response
                 switch (userChoice)
                 {
                     case 1:
@@ -94,6 +107,7 @@ namespace VirtualPet
                         
                 }
 
+                // Runs the UserPet Even method 
                 yourPet.Event();
             }
             
