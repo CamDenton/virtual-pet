@@ -18,12 +18,39 @@ namespace VirtualPet
 
         public UserPet ()
         {
+            if (hunger > 100)
+            {
+                hunger = 100;
+            }
 
+            if (waste > 100)
+            {
+                waste = 100;
+            }
+
+            if (play > 100)
+            {
+                play = 100;
+            }
         }
 
         public UserPet (string name)
         {
             this.petName = name;
+            if (hunger > 100)
+            {
+                hunger = 100;
+            }
+
+            if (waste > 100)
+            {
+                waste = 100;
+            }
+
+            if (play > 100)
+            {
+                play = 100;
+            }
             
         }
 
@@ -32,27 +59,46 @@ namespace VirtualPet
             this.hunger = hungerCon;
             this.waste = wasteCon;
             this.play = playCon;
-            this.petName = name; 
+            this.petName = name;
+
+            if (hunger > 100)
+            {
+                hunger = 100;
+            }
+
+            if (waste > 100)
+            {
+                waste = 100;
+            }
+
+            if (play > 100)
+            {
+                play = 100;
+            }
         }
 
         public string PetName
         {
             get { return petName; }
+            
         }
 
         public int Hunger
         {
             get { return hunger;  }
+            set { hunger = value; }
         }
 
         public int Waste
         {
             get { return waste; }
+            set { waste = value; }
         }
 
         public int Play
         {
             get { return play; }
+            set { play = value; }
         }
 
         public void Feed()
