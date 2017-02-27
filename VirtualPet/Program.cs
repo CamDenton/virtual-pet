@@ -37,6 +37,21 @@ namespace VirtualPet
             
             for (int i = 1; i < (i + 2); i++ )
             {
+                if (yourPet.Hunger > 100)
+                {
+                    yourPet.Hunger = 100;
+                }
+
+                if (yourPet.Waste > 100)
+                {
+                    yourPet.Waste = 100;
+                }
+
+                if (yourPet.Play > 100)
+                {
+                    yourPet.Play = 100;
+                }
+
                 Console.WriteLine("What will you do? Choose a number:");
                 Console.WriteLine("Hunger = " + yourPet.Hunger);
                 Console.WriteLine("waste = " + yourPet.Waste);
@@ -54,28 +69,16 @@ namespace VirtualPet
                     case 1:
                         Console.WriteLine("You fed " + userPetName + "a delicious meal! They seem rather happy.");
                         yourPet.Feed();
-                        if (yourPet.Hunger > 100)
-                        {
-                            yourPet.Hunger = 100;
-                        }
                         break;
 
                     case 2:
                         Console.WriteLine("You took " + userPetName + "outside to relieve themself. They seem much more comfortable!");
                         yourPet.Relieve();
-                        if (yourPet.Waste > 100)
-                        {
-                            yourPet.Waste = 100;
-                        }
                         break;
 
                     case 3:
                         Console.WriteLine("You played with " + userPetName + "for a few hours. They seem highly amused!");
                         yourPet.Entertain();
-                        if (yourPet.Play > 100)
-                        {
-                            yourPet.Play = 100;
-                        }
                         break;
 
                     case 4:
