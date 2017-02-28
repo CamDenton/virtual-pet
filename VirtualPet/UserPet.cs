@@ -9,9 +9,9 @@ namespace VirtualPet
     public class UserPet
     {
         // Created variables for each property of the UserPet class
-        private int hunger = 100;
+        private int hunger = 50;
         private int waste = 0;
-        private int play = 100;
+        private int play = 50;
         private string petName = string.Empty; 
         
          
