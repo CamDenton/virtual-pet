@@ -47,11 +47,16 @@ namespace VirtualPet
             UserPet yourPet = new UserPet(userPetName);
             // Declares an array of strings for the menu options
             string[] options = new string[] { "1. Feed", "2. Send Outside", "3. Play Together", "4. Do Nothing", "5. Exit"};
+            int pointOfLifeNum = 0;
+            string pointOfLifeStr = String.Empty;
 
             #region Menu Loop
             // creates an infinite loop that introduces menu options and runs them
             for (int i = 1; i < (i + 2); i++ )
             {
+                //Sets the point of life to the variable i
+                pointOfLifeNum = i;
+                
                 // Caps the hunger of the pet to 100
                 if (yourPet.Hunger > 100)
                 {
@@ -70,10 +75,27 @@ namespace VirtualPet
                     yourPet.Play = 100;
                 }
 
+                if (pointOfLifeNum >= 0 & pointOfLifeNum <= 33)
+                {
+                    pointOfLifeStr = yourPet.PointOfLife[0];
+                }
+
+                else if (pointOfLifeNum >= 34 & pointOfLifeNum <= 66)
+                {
+                    pointOfLifeStr = yourPet.PointOfLife[1];
+                }
+
+                else if (pointOfLifeNum >= 65)
+                {
+                    pointOfLifeStr = yourPet.PointOfLife[2];
+                }
+                    
+
                 
 
                 // Menu options are stated 
                 Console.WriteLine("What will you do? Choose a number:");
+                Console.WriteLine(userPetName + " a is a " + pointOfLifeStr + ".");
                 Console.WriteLine("Hunger = " + yourPet.Hunger);
                 Console.WriteLine("waste = " + yourPet.Waste);
                 Console.WriteLine("Boredom = " + yourPet.Play);

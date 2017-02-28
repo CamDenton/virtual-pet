@@ -14,6 +14,7 @@ namespace VirtualPet
         private int waste = 0;
         private int play = 50;
         private string petName = string.Empty;
+        private string[] pointsOfLife = { "Youth", "Adult", "Elder" };
         #endregion
 
 
@@ -70,6 +71,11 @@ namespace VirtualPet
         {
             get { return play; }
             set { play = value; }
+        }
+
+        public string[] PointOfLife
+        {
+            get { return pointsOfLife; }
         }
         #endregion
 
