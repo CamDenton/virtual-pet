@@ -83,7 +83,8 @@ namespace VirtualPet
         // Upon being called, adds two to the ints hunger and waste, but reduces 2 from play
         public void Feed()
         {
-            hunger+= 2;
+            
+            hunger += 2;
 
             waste+= 2;
 
