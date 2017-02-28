@@ -9,16 +9,19 @@ namespace VirtualPet
 {
     class Program
     {
+        #region Class Variables 
         // Declare string for the name of the users pet to be used later
         static string userPetName = String.Empty;
         // Declare a boolean to break the loop for the introduction
         static bool introDone = false;
 
         static bool exitConsole = false;
+        #endregion
 
 
         static void Main(string[] args)
         {
+            #region Intro
             // Creates a loop to first run the intro, then breaks the loop once it is over
             do
             {
@@ -37,11 +40,14 @@ namespace VirtualPet
 
 
             } while (introDone == false);
+            #endregion
 
+            
             // creates a new instance of the class UserPet using only the name modifier
             UserPet yourPet = new UserPet(userPetName);
             // Declares an array of strings for the menu options
             string[] options = new string[] { "1. Feed", "2. Send Outside", "3. Play Together", "4. Do Nothing", "5. Exit"};
+            
             
             // creates an infinite loop that introduces menu options and runs them
             for (int i = 1; i < (i + 2); i++ )
@@ -63,6 +69,8 @@ namespace VirtualPet
                 {
                     yourPet.Play = 100;
                 }
+
+                
 
                 // Menu options are stated 
                 Console.WriteLine("What will you do? Choose a number:");
