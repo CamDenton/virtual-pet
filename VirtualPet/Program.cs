@@ -47,8 +47,8 @@ namespace VirtualPet
             UserPet yourPet = new UserPet(userPetName);
             // Declares an array of strings for the menu options
             string[] options = new string[] { "1. Feed", "2. Send Outside", "3. Play Together", "4. Do Nothing", "5. Exit"};
-            
-            
+
+            #region Menu Loop
             // creates an infinite loop that introduces menu options and runs them
             for (int i = 1; i < (i + 2); i++ )
             {
@@ -87,6 +87,7 @@ namespace VirtualPet
                 // Collects the users input
                 int userChoice = int.Parse(Console.ReadLine());
 
+                #region ChoiceSwitches
                 // Creates a switch of conditions that run depending on the users response
                 switch (userChoice)
                 {
@@ -123,6 +124,7 @@ namespace VirtualPet
 
                         
                 }
+                #endregion
 
 
                 if (exitConsole == true)
@@ -135,12 +137,13 @@ namespace VirtualPet
                     yourPet.Event();
                 }
             }
-            
+            #endregion
+
         }
 
 
-        
 
-       
+
+
     }
 }

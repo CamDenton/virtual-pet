@@ -8,14 +8,17 @@ namespace VirtualPet
 {
     public class UserPet
     {
+        #region Properties
         // Created variables for each property of the UserPet class
         private int hunger = 50;
         private int waste = 0;
         private int play = 50;
-        private string petName = string.Empty; 
-        
-         
-             
+        private string petName = string.Empty;
+        #endregion
+
+
+
+# region Constructors
         // Default Constructor for UserPet
         public UserPet ()
         {
@@ -38,7 +41,9 @@ namespace VirtualPet
             this.play = playCon;
             this.petName = name; 
         }
+        #endregion
 
+        #region Modifiers
         // Returns the value of the string PetName
         public string PetName
         {
@@ -66,7 +71,9 @@ namespace VirtualPet
             get { return play; }
             set { play = value; }
         }
+        #endregion
 
+        #region Methods
         // Upon being called, adds two to the ints hunger and waste, but reduces 2 from play
         public void Feed()
         {
@@ -133,9 +140,11 @@ namespace VirtualPet
                     break;
             }
 
+            #endregion
 
 
-            
+
+
         }
     }
 }
